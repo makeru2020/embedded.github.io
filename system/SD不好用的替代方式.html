@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>文件系统挂不上 · GitBook</title>
+        <title>SD不好用的替代方式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="加载内核的时候总显示TTTTTTTT.html" />
+    <link rel="next" href="make uImage时找不到mkimage.html" />
     
     
-    <link rel="prev" href="u-boot/网卡驱动问题.html" />
+    <link rel="prev" href="NFS环境搭建.html" />
     
 
     </head>
@@ -252,7 +252,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="SD不好用的替代方式.html">
+        <li class="chapter active" data-level="1.3.3" data-path="SD不好用的替代方式.html">
             
                 <a href="SD不好用的替代方式.html">
             
@@ -381,7 +381,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.7" data-path="文件系统挂不上.html">
+        <li class="chapter " data-level="1.3.7" data-path="文件系统挂不上.html">
             
                 <a href="文件系统挂不上.html">
             
@@ -455,7 +455,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >文件系统挂不上</a>
+        <a href=".." >SD不好用的替代方式</a>
     </h1>
 </div>
 
@@ -470,31 +470,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6302;&#x4E0D;&#x4E0A;kernel-panic-&#x2013;-not-syncing&#xFF1A;attempted-to-kill-init&#xFF01;exiteade">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6302;&#x4E0D;&#x4E0A;kernel panic &#x2013; not syncing&#xFF1A;Attempted to kill init&#xFF01;exiteade</h2>
-<p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
-<pre><code> &#x5982;&#x679C;&#x80FD;&#x591F;&#x6267;&#x884C;&#x5230;&#x5982;&#x4E0B;&#x6B65;&#x9AA4;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5185;&#x6838;&#x5DF2;&#x7ECF;&#x6210;&#x529F;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x968F;&#x5373;&#x53C8;&#x62A5;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x90A3;&#x4E48;&#x5219;&#x9700;&#x8981;&#x8003;&#x8651;&#x662F;&#x5426;&#x662F;nfs&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x95EE;&#x9898;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x8003;&#x5982;&#x4E0B;:  
- [  1.810000] clk: Not disabling unused clocks  
- [  3.010000] VFS: Mounted root (nfs filesystem) on device 0:10.  
- [ 3.015000]  devtmpfs: mounted  
- [  3.020000] Freeing unused kernel memory: 228K (c050d000 - c0546000)
-</code></pre><p> <img src="../system.assets/image-20200115112022016.png" alt="image-20200115112022016"></p>
-<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</strong></p>
-<p>  1&#x3001;&#x68C0;&#x67E5;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
-<p><img src="../system.assets/image-20200115112120767.png" alt="image-20200115112120767">     </p>
-<p>1.1&#x3001;&#x786E;&#x4FDD;nfsroot &#x7684;ip&#x5730;&#x5740;&#x662F;&#x4F60;Ubuntu&#x7684;ip&#x5730;&#x5740;&#xFF0C;&#x5728;Ubuntu&#x4E0A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ifconfig&#x6765;&#x67E5;&#x770B;&#x662F;&#x5426;&#x548C;pri&#x6253;&#x5370;&#x51FA;&#x7684;&#x4E00;&#x6837;&#x3002;</p>
-<p>1.2&#x3001;&#x5728;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x7684;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0; clk_ignore_unused<br>1.3&#x3001;&#x67E5;&#x770B;rootfs&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF1A; &#x4F60;&#x7684;nfs&#x8DEF;&#x5F84;&#x53EF;&#x80FD;&#x662F;/source/rootfs&#x6216; /nfs/rootfs</p>
-<p>&#x5177;&#x4F53;&#x7684;&#x67E5;&#x770B;&#x4F60;&#x7684;nfs&#x914D;&#x7F6E;&#x6587;&#x4EF6;: /etc/exports        </p>
-<p>sudo vi /etc/exports   &#x8BFE;&#x7A0B;&#x5185;**&#x7684;nfs&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF0C;            </p>
-<p><img src="../system.assets/image-20200115112149766.png" alt="image-20200115112149766"></p>
-<p>&#x4F46;&#x662F;&#x8001;&#x5E08;&#x7684;&#x5185;&#x6838;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x54B1;&#x4EEC;&#x7684;&#x5185;&#x6838;&#x914D;&#x7F6E;&#x7A0D;&#x5FAE;&#x6709;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x9002;&#x5F53;&#x7684;&#x4FEE;&#x6539;/etc/exports&#x6587;&#x4EF6;&#xFF0C; </p>
-<p>&#x6DFB;&#x52A0; no_subtree_check&#x53C2;&#x6570;&#xFF0C;  </p>
-<p>&#x6539;&#x4E3A;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1B;    sudo vi /etc/exports (&#x6CE8;&#x610F;&#x4F60;&#x7684;nfs&#x8DEF;&#x5F84;)    </p>
-<p><img src="../system.assets/image-20200115112204586.png" alt="image-20200115112204586">   </p>
-<p>1.4&#x3001;&#x5982;&#x679C;&#x4F60;&#x7684;Ubuntu&#x662F;17.10&#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF0C;&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x8BBE;&#x7F6E;&#xFF0C;&#x56E0;&#x4E3A;&#x9AD8;&#x7248;&#x672C;Ubuntu&#x4E0D;&#x652F;&#x6301;nfs 2</p>
-<p>sudo vi /etc/default/nfs-kernel-server</p>
-<p>RPCNFSDOPTS=&quot;--nfs-version 2,3,4 --debug --syslog&quot;  </p>
-<p>&#x7136;&#x540E;&#x91CD;&#x542F;nfs&#x670D;&#x52A1;&#x5668;&#x548C;&#x5F00;&#x53D1;&#x677F;&#xFF0C;&#x5C31;OK&#x4E86;  </p>
-
+                                <h2 id="&#x5982;&#x4F55;&#x628A;sd&#x5361;&#x4E2D;&#x7684;u-boot&#x70E7;&#x5F55;&#x5230;emmc&#x4E2D;&#xFF08;sd&#x5361;&#x4E0D;&#x592A;&#x597D;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7528;&#xFF09;">&#x5982;&#x4F55;&#x628A;SD&#x5361;&#x4E2D;&#x7684;u-boot&#x70E7;&#x5F55;&#x5230;EMMc&#x4E2D;&#xFF08;SD&#x5361;&#x4E0D;&#x592A;&#x597D;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7528;&#xFF09;</h2>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code> &#x5728;&#x8D85;&#x7EA7;&#x7EC8;&#x7AEF;&#x6267;&#x884C;
+ &#x4E24;&#x79CD;&#x542F;&#x52A8;&#x6A21;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x5F00;&#x53D1;&#x677F;&#x548C;Ubuntu&#x7F51;&#x7EDC;&#x901A;&#x7545;&#xFF0C;tftp&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x3002;
+ #emmc  open 0  
+ #tftp  41000000 u-boot-fs4412.bin  
+ #mmc  write 0 41000000 0 0x440  
+ #emmc  close 0
+</code></pre>
                                 
                                 </section>
                             
@@ -521,12 +505,12 @@
 
             
                 
-                <a href="u-boot/网卡驱动问题.html" class="navigation navigation-prev " aria-label="Previous page: 网卡驱动问题">
+                <a href="NFS环境搭建.html" class="navigation navigation-prev " aria-label="Previous page: NFS环境搭建">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="加载内核的时候总显示TTTTTTTT.html" class="navigation navigation-next " aria-label="Next page: 加载内核的时候总显示TTTTTTTT">
+                <a href="make uImage时找不到mkimage.html" class="navigation navigation-next " aria-label="Next page: make uImage时找不到mkimage commond not found -U-Boot image will not be built">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -537,7 +521,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文件系统挂不上","level":"1.3.7","depth":2,"next":{"title":"加载内核的时候总显示TTTTTTTT","level":"1.3.8","depth":2,"path":"system/加载内核的时候总显示TTTTTTTT.md","ref":"./system/加载内核的时候总显示TTTTTTTT.md","articles":[]},"previous":{"title":"网卡驱动问题","level":"1.3.6.2","depth":3,"path":"system/u-boot/网卡驱动问题.md","ref":"./system/u-boot/网卡驱动问题.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"system/文件系统挂不上.md","mtime":"2020-07-31T07:41:18.567Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-31T09:00:26.905Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SD不好用的替代方式","level":"1.3.3","depth":2,"next":{"title":"make uImage时找不到mkimage commond not found -U-Boot image will not be built","level":"1.3.4","depth":2,"path":"system/make uImage时找不到mkimage.md","ref":"./system/make uImage时找不到mkimage.md","articles":[]},"previous":{"title":"NFS环境搭建","level":"1.3.2","depth":2,"path":"system/NFS环境搭建.md","ref":"./system/NFS环境搭建.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"system/SD不好用的替代方式.md","mtime":"2020-07-31T09:11:32.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-31T09:00:26.905Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

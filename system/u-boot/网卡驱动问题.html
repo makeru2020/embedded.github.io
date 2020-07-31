@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>flex找不到：/bin/sh: 1: flex not found · GitBook</title>
+        <title>网卡驱动问题 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../u-boot编译相关问题.html" />
+    <link rel="next" href="../文件系统挂不上.html" />
     
     
-    <link rel="prev" href="没有bio.h文件或目录.html" />
+    <link rel="prev" href="make  [splu-boot-spl.bin] Error 2.html" />
     
 
     </head>
@@ -292,9 +292,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.5.1" data-path="找不到ncurses库.html">
+        <li class="chapter " data-level="1.3.5.1" data-path="../kernel/找不到ncurses库.html">
             
-                <a href="找不到ncurses库.html">
+                <a href="../kernel/找不到ncurses库.html">
             
                     
                     找不到ncurses库Unable to find the ncurses libraries or the required header files
@@ -305,9 +305,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.2" data-path="没有bio.h文件或目录.html">
+        <li class="chapter " data-level="1.3.5.2" data-path="../kernel/没有bio.h文件或目录.html">
             
-                <a href="没有bio.h文件或目录.html">
+                <a href="../kernel/没有bio.h文件或目录.html">
             
                     
                     没有bio.h文件或目录fatal error: openssl/bio.h: No such file or directory
@@ -318,9 +318,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5.3" data-path="flex找不到.html">
+        <li class="chapter " data-level="1.3.5.3" data-path="../kernel/flex找不到.html">
             
-                <a href="flex找不到.html">
+                <a href="../kernel/flex找不到.html">
             
                     
                     flex找不到：/bin/sh: 1: flex not found
@@ -350,9 +350,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.6.1" data-path="../u-boot/make  [splu-boot-spl.bin] Error 2.html">
+        <li class="chapter " data-level="1.3.6.1" data-path="make  [splu-boot-spl.bin] Error 2.html">
             
-                <a href="../u-boot/make  [splu-boot-spl.bin] Error 2.html">
+                <a href="make  [splu-boot-spl.bin] Error 2.html">
             
                     
                     make  [splu-boot-spl.bin] Error 2
@@ -363,9 +363,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6.2" data-path="../u-boot/网卡驱动问题.html">
+        <li class="chapter active" data-level="1.3.6.2" data-path="网卡驱动问题.html">
             
-                <a href="../u-boot/网卡驱动问题.html">
+                <a href="网卡驱动问题.html">
             
                     
                     网卡驱动问题
@@ -455,7 +455,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >flex找不到：/bin/sh: 1: flex not found</a>
+        <a href="../.." >网卡驱动问题</a>
     </h1>
 </div>
 
@@ -470,12 +470,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="flex&#x627E;&#x4E0D;&#x5230;&#xFF1A;binsh-1-flex-not-found">flex&#x627E;&#x4E0D;&#x5230;&#xFF1A;/bin/sh: 1: flex not found</h2>
+                                <h2 id="u-boot-dm9000&#x7F51;&#x5361;&#x9A71;&#x52A8;&#x63D0;&#x793A;could-not-establish-link">U-Boot DM9000&#x7F51;&#x5361;&#x9A71;&#x52A8;&#x63D0;&#x793A;&quot;could not establish link&quot;</h2>
 <p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
-<p><img src="../../system.assets/image-20200115111632113.png" alt="image-20200115111632113">   </p>
-<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
-<pre><code> sudo  apt-get install flex
+<p>&#x200B;         <img src="../../system.assets/image-20200115113742840.png" alt="image-20200115113742840"></p>
+<p><strong>&#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF1A;</strong></p>
+<pre><code class="lang-c"><span class="hljs-number">1</span>&#x3001;&#x9996;&#x5148;&#x8981;&#x6CE8;&#x610F;&#x81EA;&#x5DF1;&#x7684;&#x64CD;&#x4F5C;&#x6D41;&#x7A0B;&#xFF0C;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#x4EE5;&#x53CA;&#x8F93;&#x5165;&#x6CD5;&#xFF0C;&#x4E00;&#x5B9A;&#x662F;&#x82F1;&#x6587;&#x8F93;&#x5165;&#x6CD5;  
+<span class="hljs-number">2</span>&#x3001;-&#x5982;&#x679C;&#x8F93;&#x5165;&#x6CD5;&#x548C;&#x64CD;&#x4F5C;&#x6D41;&#x7A0B;&#x90FD;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x90A3;&#x5C31;&#x5C4F;&#x853D;dm9000x.c&#x4E2D;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7F16;&#x8BD1;&#x51FA;&#x6765;u-boot<span class="hljs-number">-2013.</span>bin&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;  
+ <span class="hljs-keyword">static</span>  <span class="hljs-keyword">int</span> **dm9000_init**(<span class="hljs-keyword">struct</span> eth_device *dev, <span class="hljs-keyword">bd_t</span> *bd)   
+ {     <span class="hljs-comment">// &#x4E0D;&#x505A;&#x4FEE;&#x6539;      </span>
+ <span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> 0   </span>
+ <span class="hljs-comment">// &#x5C4F;&#x853D;&#x6389;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;     </span>
+     i = <span class="hljs-number">0</span>;     
+     <span class="hljs-keyword">while</span>  (!(dm9000_phy_read(<span class="hljs-number">1</span>) &amp; <span class="hljs-number">0x20</span>)) {  <span class="hljs-comment">/*  autonegation complete bit */</span>       
+         udelay(<span class="hljs-number">1000</span>);       
+         i++;       
+         <span class="hljs-keyword">if</span> (i == <span class="hljs-number">10000</span>) {        
+             <span class="hljs-built_in">printf</span>**(<span class="hljs-string">&quot;could  not establish link\n&quot;</span>);         
+             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;       
+         }     
+     }   
+     <span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>        </span>
+     <span class="hljs-comment">// &#x4E0D;&#x505A;&#x4FEE;&#x6539;   </span>
+ }
 </code></pre>
+
                                 
                                 </section>
                             
@@ -502,12 +520,12 @@
 
             
                 
-                <a href="没有bio.h文件或目录.html" class="navigation navigation-prev " aria-label="Previous page: 没有bio.h文件或目录fatal error: openssl/bio.h: No such file or directory">
+                <a href="make  [splu-boot-spl.bin] Error 2.html" class="navigation navigation-prev " aria-label="Previous page: make  [splu-boot-spl.bin] Error 2">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../u-boot编译相关问题.html" class="navigation navigation-next " aria-label="Next page: u-boot编译相关问题">
+                <a href="../文件系统挂不上.html" class="navigation navigation-next " aria-label="Next page: 文件系统挂不上">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -518,7 +536,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"flex找不到：/bin/sh: 1: flex not found","level":"1.3.5.3","depth":3,"next":{"title":"u-boot编译相关问题","level":"1.3.6","depth":2,"path":"system/u-boot编译相关问题.md","ref":"./system/u-boot编译相关问题.md","articles":[{"title":"make  [splu-boot-spl.bin] Error 2","level":"1.3.6.1","depth":3,"path":"system/u-boot/make  [splu-boot-spl.bin] Error 2.md","ref":"./system/u-boot/make  [splu-boot-spl.bin] Error 2.md","articles":[]},{"title":"网卡驱动问题","level":"1.3.6.2","depth":3,"path":"system/u-boot/网卡驱动问题.md","ref":"./system/u-boot/网卡驱动问题.md","articles":[]}]},"previous":{"title":"没有bio.h文件或目录fatal error: openssl/bio.h: No such file or directory","level":"1.3.5.2","depth":3,"path":"system/kernel/没有bio.h文件或目录.md","ref":"./system/kernel/没有bio.h文件或目录.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"system/kernel/flex找不到.md","mtime":"2020-07-31T07:30:04.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-31T09:00:26.905Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网卡驱动问题","level":"1.3.6.2","depth":3,"next":{"title":"文件系统挂不上","level":"1.3.7","depth":2,"path":"system/文件系统挂不上.md","ref":"./system/文件系统挂不上.md","articles":[]},"previous":{"title":"make  [splu-boot-spl.bin] Error 2","level":"1.3.6.1","depth":3,"path":"system/u-boot/make  [splu-boot-spl.bin] Error 2.md","ref":"./system/u-boot/make  [splu-boot-spl.bin] Error 2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"system/u-boot/网卡驱动问题.md","mtime":"2020-07-31T09:28:06.018Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-31T09:00:26.905Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
