@@ -252,6 +252,122 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.3" data-path="../system/make uImage时找不到mkimage.html">
+            
+                <a href="../system/make uImage时找不到mkimage.html">
+            
+                    
+                    make uImage时找不到mkimage commond not found -U-Boot image will not be built
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../system/make menuconfig配置内核相关问题.html">
+            
+                <a href="../system/make menuconfig配置内核相关问题.html">
+            
+                    
+                    make menuconfig配置内核相关问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../system/kernel/找不到ncurses库.html">
+            
+                <a href="../system/kernel/找不到ncurses库.html">
+            
+                    
+                    找不到ncurses库Unable to find the ncurses libraries or the required header files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../system/kernel/没有bio.h文件或目录.html">
+            
+                <a href="../system/kernel/没有bio.h文件或目录.html">
+            
+                    
+                    没有bio.h文件或目录fatal error: openssl/bio.h: No such file or directory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../system/kernel/flex找不到.html">
+            
+                <a href="../system/kernel/flex找不到.html">
+            
+                    
+                    flex找不到：/bin/sh: 1: flex not found
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../system/u-boot编译相关问题.html">
+            
+                <a href="../system/u-boot编译相关问题.html">
+            
+                    
+                    u-boot编译相关问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../system/u-boot/make  [splu-boot-spl.bin] Error 2.html">
+            
+                <a href="../system/u-boot/make  [splu-boot-spl.bin] Error 2.html">
+            
+                    
+                    make  [splu-boot-spl.bin] Error 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../system/文件系统挂不上.html">
+            
+                <a href="../system/文件系统挂不上.html">
+            
+                    
+                    文件系统挂不上
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -303,74 +419,121 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x70B9;&#x706F;&#x5B9E;&#x9A8C;&#x6C47;&#x7F16;&#x7248;">&#x70B9;&#x706F;&#x5B9E;&#x9A8C;&#x6C47;&#x7F16;&#x7248;</h1>
-<pre><code>.text
+<pre><code>
+.text
 
-ldr  r0,=0x11000c40                                        
-ldr  r1,[r0]                   
-bic  r1,#0xf0000000   
-orr  r1,#0x10000000           
-str  r1,[r0]
 
-ldr  r0,=0x11000c20                                        
-ldr  r1,[r0]                                   
-bic  r1,#0x0000000f   
-orr  r1,#0x00000001                                               
-str  r1,[r0]
+@ &#x8BBE;&#x7F6E;LED&#x706F;&#x7684;&#x914D;&#x7F6E;&#x5BC4;&#x5B58;&#x5668; GPX2CON &#x4E3A;&#x8F93;&#x51FA;&#x72B6;&#x6001;
+ldr r0,=0x11000c40
 
-ldr  r0,=0x114001E0                                        
-ldr  r1,[r0]                   
-bic  r1,#0x000f0000                                       
-orr  r1,#0x00010000           
-str  r1,[r0]   
+ldr r1,[r0]
+bic r1,#0xf0000000  
+@&#x8868;&#x793A;&#x6700;&#x9AD8;&#x7684;&#x4E00;&#x4F4D;&#x4E2D;&#x7684;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x5168;&#x90E8;&#x6E05;&#x96F6;
+orr r1,#0x10000000
+str r1,[r0]         
+@&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#x8868;&#x793A;&#x53EA;&#x6539;&#x53D8;&#x6700;&#x9AD8;&#x7684;4&#x4F4D;&#xFF08;7&#x53F7;&#x4F4D;&#xFF09; &#x800C;&#x4E0D;&#x53BB;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x503C;
+
+@ &#x8BBE;&#x7F6E;GPX1CON&#x4E3A;&#x8F93;&#x51FA;&#x72B6;&#x6001;
+ldr r0,=0x11000c20
+ldr r1,[r0]
+bic r1,#0x0000000f  
+orr r1,#0x00000001
+str r1,[r0]         
+
+@ &#x8BBE;&#x7F6E;GPF3CON&#x4E3A;&#x8F93;&#x51FA;&#x72B6;&#x6001;
+ldr r0,=0x114001E0
+ldr r1,[r0]
+bic r1,#0x000f0000 
+orr r1,#0x00010000
+str r1,[r0] 
+
+@ &#x8BBE;&#x7F6E;GPF3CON_5&#x4E3A;&#x8F93;&#x51FA;&#x72B6;&#x6001;
+ldr r0,=0x114001E0
+ldr r1,[r0]
+bic r1,#0x00F00000 
+orr r1,#0x00100000
+str r1,[r0] 
+
 
 loop:
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x9AD8;&#x7535;&#x5E73;GPX2DAT
+ldr r0,=0x11000c44
+ldr r1,[r0]
+orr r1,#0x80
+str r1,[r0]
 
-ldr  r0,=0x11000c44   
-ldr  r1,[r0]           
-orr  r1,#0x80                                                                                      
-str  r1,[r0]   
+bl delay1s
 
-bl delay1s           
-
-
-ldr  r0,=0x11000c44                                                                
-ldr  r1,[r0]
-bic  r1,#0x80   
-str  r1,[r0]
-
-bl  delay1s                   
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x4F4E;&#x7535;&#x5E73;GPX2DAT
+ldr r0,=0x11000c44
+ldr r1,[r0]
+bic r1,#0x80
+str r1,[r0]
 
 
-ldr  r0,=0x11000c24   
-ldr  r1,[r0]                                                                   
-orr  r1,#0x01                                              
-str  r1,[r0]   
 
-bl  delay1s           
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x9AD8;&#x7535;&#x5E73;GPX1DAT
+ldr r0,=0x11000c24
+ldr r1,[r0]
+orr r1,#0x01
+str r1,[r0]
+
+bl delay1s
+
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x4F4E;&#x7535;&#x5E73;GPX1DAT
+ldr r0,=0x11000c24
+ldr r1,[r0]
+bic r1,#0x01
+str r1,[r0]
 
 
-ldr  r0,=0x11000c24                                                                                    
-ldr  r1,[r0]
-bic  r1,#0x01   
-str  r1,[r0]
+
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x9AD8;&#x7535;&#x5E73;GPF3DAT
+ldr r0,=0x114001E4
+ldr r1,[r0]
+orr r1,#0x10
+str r1,[r0]
+
+bl delay1s
+
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x4F4E;&#x7535;&#x5E73;GPF3DAT
+ldr r0,=0x114001E4
+ldr r1,[r0]
+bic r1,#0x10
+str r1,[r0]
+
+
+
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x9AD8;&#x7535;&#x5E73;GPF3DAT_5
+ldr r0,=0x114001E4
+ldr r1,[r0]
+orr r1,#0x20
+str r1,[r0]
+
+bl delay1s
+
+@&#x8BBE;&#x7F6E;LED&#x706F;&#x8F93;&#x51FA;&#x4F4E;&#x7535;&#x5E73;GPX2DAT_5
+ldr r0,=0x114001E4
+ldr r1,[r0]
+bic r1,#0x20
+str r1,[r0]
+
+bl delay1s
+b loop
+
+delay1s:
+ldr r4,=0x1fffffff
+delay1s_loop:
+sub r4,r4,#1
+cmp r4,#0
+bne delay1s_loop
+mov pc,lr
+
+
+.end
+
 
 bl  delay1s
-
-ldr  r0,=0x114001E4   
-ldr  r1,[r0]          
-orr  r1,#0x10                                              
-str  r1,[r0]   
-
-bl  delay1s           
-
-
-ldr  r0,=0x114001E4                                                                                    
-ldr  r1,[r0]
-bic  r1,#0x10   
-str  r1,[r0]
-
-bl  delay1s
-
 b    loop           
 
 delay1s:     
@@ -424,7 +587,7 @@ mov   pc,lr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"点灯实验汇编版","level":"1.2.5","depth":2,"next":{"title":"点灯实验C语言版","level":"1.2.6","depth":2,"path":"ARM-ASM-A9/点灯实验C语言版.md","ref":"./ARM-ASM-A9/点灯实验C语言版.md","articles":[]},"previous":{"title":"汇编 mov指令mov R1，1234报错","level":"1.2.4","depth":2,"path":"ARM-ASM-A9/汇编mov指令.md","ref":"./ARM-ASM-A9/汇编mov指令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ARM-ASM-A9/点灯实验汇编版.md","mtime":"2020-03-12T10:01:54.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-12T02:38:45.838Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"点灯实验汇编版","level":"1.2.5","depth":2,"next":{"title":"点灯实验C语言版","level":"1.2.6","depth":2,"path":"ARM-ASM-A9/点灯实验C语言版.md","ref":"./ARM-ASM-A9/点灯实验C语言版.md","articles":[]},"previous":{"title":"汇编 mov指令mov R1，1234报错","level":"1.2.4","depth":2,"path":"ARM-ASM-A9/汇编mov指令.md","ref":"./ARM-ASM-A9/汇编mov指令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ARM-ASM-A9/点灯实验汇编版.md","mtime":"2020-03-14T06:05:13.150Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-31T03:40:45.297Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
