@@ -1,0 +1,1178 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>树-还原一棵树 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="哈希查找-二次探查法.html" />
+    
+    
+    <link rel="prev" href="unknown type name问题.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../C/">
+            
+                <a href="../C/">
+            
+                    
+                    level 1 C及环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../C/environment/vmware安装教程.html">
+            
+                <a href="../C/environment/vmware安装教程.html">
+            
+                    
+                    vmware环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../C/environment/vmwre10打不开Ubuntu.html">
+            
+                <a href="../C/environment/vmwre10打不开Ubuntu.html">
+            
+                    
+                    vmware安装问题-vmware10打不开Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../C/environment/CPU虚拟化问题.html">
+            
+                <a href="../C/environment/CPU虚拟化问题.html">
+            
+                    
+                    vmware安装问题-不可恢复错误：(vcpu-0)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../C/environment/不可恢复错误svga.html">
+            
+                <a href="../C/environment/不可恢复错误svga.html">
+            
+                    
+                    vmware安装问题-不可恢复错误：(svga)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../C/environment/安装hcmon driver失败.html">
+            
+                <a href="../C/environment/安装hcmon driver失败.html">
+            
+                    
+                    vmware安装问题-安装hcmon driver失败
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../C/environment/Ubuntu懒汉版打开步骤.html">
+            
+                <a href="../C/environment/Ubuntu懒汉版打开步骤.html">
+            
+                    
+                    ubuntu懒汉版打开步骤-推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../C/environment/Ubuntu折腾版iso安装步骤.html">
+            
+                <a href="../C/environment/Ubuntu折腾版iso安装步骤.html">
+            
+                    
+                    ubuntu折腾版iso安装步骤-不推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../C/environment/vim配置.html">
+            
+                <a href="../C/environment/vim配置.html">
+            
+                    
+                    Ubuntu配置-vim配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../C/environment/vmtools配置.html">
+            
+                <a href="../C/environment/vmtools配置.html">
+            
+                    
+                    Ubuntu配置-vmtools配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../C/environment/共享文件夹设置.html">
+            
+                <a href="../C/environment/共享文件夹设置.html">
+            
+                    
+                    Ubuntu配置-共享文件夹设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../C/environment/网络配置.html">
+            
+                <a href="../C/environment/网络配置.html">
+            
+                    
+                    Ubuntu配置-网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../C/environment/中文输入法配置（搜狗）.html">
+            
+                <a href="../C/environment/中文输入法配置（搜狗）.html">
+            
+                    
+                    Ubuntu配置-中文输入法配置（搜狗）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../C/environment/中文输入法配置（自带输入法）.html">
+            
+                <a href="../C/environment/中文输入法配置（自带输入法）.html">
+            
+                    
+                    Ubuntu配置-中文输入法配置（自带输入法）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../C/标点符号问题.html">
+            
+                <a href="../C/标点符号问题.html">
+            
+                    
+                    C语言语法错误-标点符号问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../C/void强制转换问题.html">
+            
+                <a href="../C/void强制转换问题.html">
+            
+                    
+                    C语言语法错误-void强制类型转换问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../C/数组越界.html">
+            
+                <a href="../C/数组越界.html">
+            
+                    
+                    C语言语法错误-数组越界问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../C/段错误.html">
+            
+                <a href="../C/段错误.html">
+            
+                    
+                    C语言语法错误-段错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../linux/README.md">
+            
+                <span>
+            
+                    
+                    level 2 linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../linux/Ubuntu配置-命令行.html">
+            
+                <a href="../linux/Ubuntu配置-命令行.html">
+            
+                    
+                    Ubuntu网络配置-命令行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../linux/aptitude问题.html">
+            
+                <a href="../linux/aptitude问题.html">
+            
+                    
+                    aptitude问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="README.md">
+            
+                <span>
+            
+                    
+                    level 3 数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="unknown type name问题.html">
+            
+                <a href="unknown type name问题.html">
+            
+                    
+                    unknown type name问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="树-还原一棵树.html">
+            
+                <a href="树-还原一棵树.html">
+            
+                    
+                    树-还原一棵树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="哈希查找-二次探查法.html">
+            
+                <a href="哈希查找-二次探查法.html">
+            
+                    
+                    哈希查找-二次探查法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="README.md">
+            
+                <span>
+            
+                    
+                    level 4-5 IO进程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../IO_process/fork相关问题.html">
+            
+                <a href="../IO_process/fork相关问题.html">
+            
+                    
+                    fork相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../database/数据库安装.html">
+            
+                <a href="../database/数据库安装.html">
+            
+                    
+                    level 7 sqlite3数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ARM-ASM-A9/">
+            
+                <a href="../ARM-ASM-A9/">
+            
+                    
+                    level 9 ARM-ASM-A9
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ARM-ASM-A9/Keil找不到交叉编译工具链Error：failed to execute ‘arm-none-linux-gnueabias’.html">
+            
+                <a href="../ARM-ASM-A9/Keil找不到交叉编译工具链Error：failed to execute ‘arm-none-linux-gnueabias’.html">
+            
+                    
+                    Keil找不到交叉编译工具链Error：failed to execute ‘arm-none-linux-gnueabias’
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ARM-ASM-A9/没有读写权限.html">
+            
+                <a href="../ARM-ASM-A9/没有读写权限.html">
+            
+                    
+                    keil执行没有读写权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ARM-ASM-A9/超级终端无打印.html">
+            
+                <a href="../ARM-ASM-A9/超级终端无打印.html">
+            
+                    
+                    超级终端或者putty无打印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../ARM-ASM-A9/汇编mov指令.html">
+            
+                <a href="../ARM-ASM-A9/汇编mov指令.html">
+            
+                    
+                    汇编 mov指令mov R1，1234报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../ARM-ASM-A9/点灯实验汇编版.html">
+            
+                <a href="../ARM-ASM-A9/点灯实验汇编版.html">
+            
+                    
+                    点灯实验汇编版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../ARM-ASM-A9/点灯实验C语言版.html">
+            
+                <a href="../ARM-ASM-A9/点灯实验C语言版.html">
+            
+                    
+                    点灯实验C语言版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../ARM-ASM-A9/串口实验.html">
+            
+                <a href="../ARM-ASM-A9/串口实验.html">
+            
+                    
+                    串口实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../system/">
+            
+                <a href="../system/">
+            
+                    
+                    level 10 系统移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../system/TFTP环境搭建.html">
+            
+                <a href="../system/TFTP环境搭建.html">
+            
+                    
+                    TFTP环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../system/NFS环境搭建.html">
+            
+                <a href="../system/NFS环境搭建.html">
+            
+                    
+                    NFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../system/SD不好用的替代方式.html">
+            
+                <a href="../system/SD不好用的替代方式.html">
+            
+                    
+                    SD不好用的替代方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../system/make uImage时找不到mkimage.html">
+            
+                <a href="../system/make uImage时找不到mkimage.html">
+            
+                    
+                    make uImage时找不到mkimage commond not found -U-Boot image will not be built
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../system/make menuconfig配置内核相关问题.html">
+            
+                <a href="../system/make menuconfig配置内核相关问题.html">
+            
+                    
+                    make menuconfig配置内核相关问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../system/kernel/找不到ncurses库.html">
+            
+                <a href="../system/kernel/找不到ncurses库.html">
+            
+                    
+                    找不到ncurses库Unable to find the ncurses libraries or the required header files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.2" data-path="../system/kernel/没有bio.h文件或目录.html">
+            
+                <a href="../system/kernel/没有bio.h文件或目录.html">
+            
+                    
+                    没有bio.h文件或目录fatal error: openssl/bio.h: No such file or directory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.3" data-path="../system/kernel/flex找不到.html">
+            
+                <a href="../system/kernel/flex找不到.html">
+            
+                    
+                    flex找不到：/bin/sh: 1: flex not found
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../system/u-boot编译相关问题.html">
+            
+                <a href="../system/u-boot编译相关问题.html">
+            
+                    
+                    u-boot编译相关问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.6.1" data-path="../system/u-boot/make  [splu-boot-spl.bin] Error 2.html">
+            
+                <a href="../system/u-boot/make  [splu-boot-spl.bin] Error 2.html">
+            
+                    
+                    make  [splu-boot-spl.bin] Error 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6.2" data-path="../system/u-boot/网卡驱动问题.html">
+            
+                <a href="../system/u-boot/网卡驱动问题.html">
+            
+                    
+                    网卡驱动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../system/文件系统挂不上.html">
+            
+                <a href="../system/文件系统挂不上.html">
+            
+                    
+                    文件系统挂不上
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../system/加载内核的时候总显示TTTTTTTT.html">
+            
+                <a href="../system/加载内核的时候总显示TTTTTTTT.html">
+            
+                    
+                    加载内核的时候总显示TTTTTTTT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../system/tftp 41000000作用.html">
+            
+                <a href="../system/tftp 41000000作用.html">
+            
+                    
+                    tftp 41000000作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../drive/">
+            
+                <a href="../drive/">
+            
+                    
+                    level 11-12 驱动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../drive/Sourceinsight4的安装使用教程.html">
+            
+                <a href="../drive/Sourceinsight4的安装使用教程.html">
+            
+                    
+                    Sourceinsight4的安装使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../drive/Samba服务器搭建.html">
+            
+                <a href="../drive/Samba服务器搭建.html">
+            
+                    
+                    Samba服务器搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../drive/Samba更换Sourceinsight+共享文件夹教程.html">
+            
+                <a href="../drive/Samba更换Sourceinsight+共享文件夹教程.html">
+            
+                    
+                    Samba更换为si+共享文件夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../drive/Hello.ko模块加载不成功.html">
+            
+                <a href="../drive/Hello.ko模块加载不成功.html">
+            
+                    
+                    Hello.ko模块加载不成功
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../drive/rmmod卸载驱动失败.html">
+            
+                <a href="../drive/rmmod卸载驱动失败.html">
+            
+                    
+                    rmmod卸载驱动失败
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../drive/insmod报invalid module format.html">
+            
+                <a href="../drive/insmod报invalid module format.html">
+            
+                    
+                    insmod报invalid module format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../drive/按键空指针异常.html">
+            
+                <a href="../drive/按键空指针异常.html">
+            
+                    
+                    按键空指针异常问题：Unable to handle kernel NULL pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../drive/新版内核按键驱动问题.html">
+            
+                <a href="../drive/新版内核按键驱动问题.html">
+            
+                    
+                    新版内核按键驱动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../drive/input子系统设备节点找不到.html">
+            
+                <a href="../drive/input子系统设备节点找不到.html">
+            
+                    
+                    input子系统设备节点找不到
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../drive/input子系统上报按键信息读不到问题.html">
+            
+                <a href="../drive/input子系统上报按键信息读不到问题.html">
+            
+                    
+                    input子系统上报按键信息读不到问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../drive/plat卸载驱动问题.html">
+            
+                <a href="../drive/plat卸载驱动问题.html">
+            
+                    
+                    Linux驱动卸载时出现“Device 'xxx' does not have a release()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../project/">
+            
+                <a href="../project/">
+            
+                    
+                    level 13 安防项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../project/GPRS设备问题.html">
+            
+                <a href="../project/GPRS设备问题.html">
+            
+                    
+                    GPRS设备问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../project/404错误.html">
+            
+                <a href="../project/404错误.html">
+            
+                    
+                    404错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../project/502 Bad Gateway.html">
+            
+                <a href="../project/502 Bad Gateway.html">
+            
+                    
+                    502 Bad Gateway错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >树-还原一棵树</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6839;&#x636E;&#x6811;&#x7684;&#x524D;&#x5E8F;&#x548C;&#x4E2D;&#x5E8F;&#x8FD8;&#x539F;&#x4E00;&#x68F5;&#x6811;&#xFF1A;">&#x6839;&#x636E;&#x6811;&#x7684;&#x524D;&#x5E8F;&#x548C;&#x4E2D;&#x5E8F;&#x8FD8;&#x539F;&#x4E00;&#x68F5;&#x6811;&#xFF1A;</h2>
+<p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<p>  &#x5DF2;&#x77E5;&#x904D;&#x5386;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF0C;&#x8BD5;&#x753B;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;  </p>
+<p>&#x524D;&#x5E8F;&#xFF1A;ABCEHFIJDGK  </p>
+<p>&#x4E2D;&#x5E8F;&#xFF1A;AHECIFJBDKG  </p>
+<p><strong>&#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF1A;</strong></p>
+<p>  &#x904D;&#x5386;&#x662F;&#x6709;&#x4E09;&#x4E2A;&#x904D;&#x5386;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x90FD;&#x6709;&#x89C4;&#x5F8B;&#xFF0C;</p>
+<p>&#x524D;&#x5E8F;&#xFF1A;&#x6839;-&#x5DE6;-&#x53F3;&#xFF0C;&#x4E2D;&#x5E8F;&#xFF1A;&#x5DE6;-&#x6839;-&#x53F3;&#xFF0C;&#x540E;&#x5E8F;&#xFF1A;&#x5DE6;-&#x53F3;-&#x6839;&#xFF0C;</p>
+<p>&#x8FD9;&#x4E2A;&#x89C4;&#x5F8B;&#x540C;&#x6837;&#x9002;&#x7528;&#x904D;&#x5386;&#x540E;&#x89C2;&#x5BDF;&#x89C4;&#x5F8B;&#xFF0C;  &#x524D;&#x5E8F;&#x7B2C;&#x4E00;&#x4E2A;&#x4E00;&#x5B9A;&#x662F;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C; &#x540E;&#x5E8F;&#x540C;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x7B2C;&#x4E00;&#x6839;&#x5206;&#x4E2D;&#x5E8F;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#xFF0C;&#x5B50;&#x6811;&#x91CC;&#x4E5F;&#x7528;&#x8FD9;&#x4E2A;&#x524D;&#x5E8F;&#x540E;&#x7EED;&#x89C4;&#x5F8B;&#x627E;&#x5C31;&#x53EF;&#x4EE5;&#x8FD8;&#x539F;&#x3002;  </p>
+<p>&#x524D;&#x5E8F;&#x904D;&#x5386;&#x89C4;&#x5219;&#xFF1A;&#x6839;-&#x5DE6;-&#x53F3;  </p>
+<p>&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x89C4;&#x5219;&#xFF1A;&#x5DE6;-&#x6839;-&#x53F3;  </p>
+<p> &#x540E;&#x5E8F;&#x904D;&#x5386;&#x89C4;&#x5219;&#xFF1A;&#x5DE6;-&#x53F3;-&#x6839;  </p>
+<p><img src="../data.assets/image-20200115102250185.png" alt="image-20200115102250185"></p>
+<p>&#x540E;&#x5E8F;&#xFF1A;H E I J F C K G D B A  </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="unknown type name问题.html" class="navigation navigation-prev " aria-label="Previous page: unknown type name问题">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="哈希查找-二次探查法.html" class="navigation navigation-next " aria-label="Next page: 哈希查找-二次探查法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"树-还原一棵树","level":"1.4.2","depth":2,"next":{"title":"哈希查找-二次探查法","level":"1.4.3","depth":2,"path":"data/哈希查找-二次探查法.md","ref":"./data/哈希查找-二次探查法.md","articles":[]},"previous":{"title":"unknown type name问题","level":"1.4.1","depth":2,"path":"data/unknown type name问题.md","ref":"./data/unknown type name问题.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"data/树-还原一棵树.md","mtime":"2020-09-29T09:00:51.303Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T07:01:16.436Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
